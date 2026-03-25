@@ -922,6 +922,7 @@ body{overflow-x:hidden;}
 @media(max-width:768px){
   .closing-wave-top,.closing-wave-top svg{height:90px;}
   .closing-wave-bot,.closing-wave-bot svg{height:90px;}
+  .closing .stitle{font-size:clamp(16px,4.8vw,22px);white-space:nowrap;}
 }
 .cl-in{position:relative;z-index:3;max-width:700px;margin:0 auto;}
 .closing .stitle{color:var(--tx);margin:0 auto 14px;position:relative;z-index:1;}
