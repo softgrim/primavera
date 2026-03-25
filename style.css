@@ -663,6 +663,8 @@ a{text-decoration:none;}
   .taste-arr-img{width:100%;aspect-ratio:3/2;}
   .taste-arrange-cards{grid-template-columns:1fr;}
   .taste-arrange-wrap{padding:28px 20px;}
+  .taste-arrange-heading{font-size:16px;letter-spacing:.03em;gap:10px;}
+  .taste-arrange-heading::before,.taste-arrange-heading::after{width:24px;}
 }
 
 /* NUTRITION */
@@ -759,6 +761,9 @@ a{text-decoration:none;}
   .feat-title{font-size:clamp(18px,5vw,28px)!important;}
   .dsk-br{display:none;}
 }
+@media(max-width:768px){
+  .feat-title{font-size:24px!important;line-height:1.35;}
+}
 .fgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
 .fitem{background:var(--white);border:1.5px solid var(--bdr);border-radius:16px;padding:22px 20px;transition:border-color .25s,transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .25s;box-shadow:0 2px 12px rgba(140,90,0,.06);}
 .fitem:hover{border-color:rgba(255,208,0,.55);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,208,0,.15);}
@@ -781,6 +786,7 @@ a{text-decoration:none;}
 .dlabel{font-size:13px;font-weight:700;letter-spacing:.22em;color:var(--y-pale);margin-bottom:14px;text-transform:uppercase;display:flex;align-items:center;gap:10px;}
 .dlabel::before{content:'';display:inline-block;width:28px;height:1px;background:var(--y-pale);}
 .dname{font-size:36px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:.06em;line-height:1.1;}
+@media(max-width:768px){.dname{font-size:26px;letter-spacing:.03em;}}
 .dtitle{font-size:12px;color:rgba(255,230,160,.8);font-weight:500;letter-spacing:.06em;padding-top:10px;border-top:1px solid rgba(255,220,120,.25);margin-top:2px;display:inline-block;}
 .doc-body{padding:32px 36px;background:#fff;}
 .dbio{font-size:14.5px;color:var(--tx-body);line-height:1.9;margin-bottom:20px;}
@@ -1074,10 +1080,14 @@ footer{background:#FFF8D8;padding:36px 60px;display:flex;justify-content:space-b
 }
 
 /* ── SECTION SEPARATORS & BACKGROUNDS ── */
-.sec-bg-a{ background:var(--sec-a); border-bottom:1px solid rgba(200,165,0,0.18); }
+.mob-br{display:none;}
+@media(max-width:768px){.mob-br{display:block;}}
 .sec-bg-b{ background:var(--sec-b); border-bottom:1px solid rgba(200,165,0,0.18); }
 .sec-bg-c{ background:var(--sec-c); border-bottom:1px solid rgba(200,165,0,0.18); }
 .sec-bg-white{ background:#ffffff; border-bottom:1px solid rgba(200,165,0,0.18); }
+@media(max-width:768px){
+  .sec-bg-a,.sec-bg-b,.sec-bg-c,.sec-bg-white,.target{border-bottom:none;}
+}
 .faq.sec-bg-b{ border-bottom:none; }
 
 /* Sections are always visible — only .reveal-content inside fades */
