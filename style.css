@@ -50,7 +50,7 @@ a{text-decoration:none;}
   padding-top:62px;
   padding-bottom:0;
   overflow:hidden;
-  margin-bottom:-1px;
+  margin-bottom:-2px;
 }
 .hero::before{
   content:'';
@@ -352,6 +352,8 @@ a{text-decoration:none;}
   padding:100px 60px;
   position:relative;
   overflow:hidden;
+  background:var(--sec-a);
+  margin-top:-2px;
 }
 .prob-in{
   max-width:var(--max);margin:0 auto 64px;
@@ -910,7 +912,7 @@ a{text-decoration:none;}
 }
 
 /* CLOSING */
-.closing{background:linear-gradient(160deg,#FFF8CC 0%,#FFD200 50%,#F5A800 100%);padding:180px 60px 110px;text-align:center;position:relative;overflow:visible;margin-top:-1px;}
+.closing{background:linear-gradient(160deg,#FFF8CC 0%,#FFD200 50%,#F5A800 100%);padding:180px 60px 110px;text-align:center;position:relative;overflow:hidden;margin-top:-2px;}
 .closing::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.4) 0%,transparent 60%);pointer-events:none;z-index:0;}
 body{overflow-x:hidden;}
 .closing-wave-top{position:absolute;top:0;left:0;width:100%;height:160px;pointer-events:none;z-index:2;}
@@ -1083,12 +1085,10 @@ footer{background:#FFF8D8;padding:36px 60px;display:flex;justify-content:space-b
 /* ── SECTION SEPARATORS & BACKGROUNDS ── */
 .mob-br{display:none;}
 @media(max-width:768px){.mob-br{display:block;}}
+.sec-bg-a{ background:var(--sec-a); border-bottom:1px solid rgba(200,165,0,0.18); }
 .sec-bg-b{ background:var(--sec-b); border-bottom:1px solid rgba(200,165,0,0.18); }
 .sec-bg-c{ background:var(--sec-c); border-bottom:1px solid rgba(200,165,0,0.18); }
 .sec-bg-white{ background:#ffffff; border-bottom:1px solid rgba(200,165,0,0.18); }
-@media(max-width:768px){
-  .sec-bg-a,.sec-bg-b,.sec-bg-c,.sec-bg-white,.target{border-bottom:none;}
-}
 .faq.sec-bg-b{ border-bottom:none; }
 
 /* Sections are always visible — only .reveal-content inside fades */
