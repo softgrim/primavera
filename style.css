@@ -912,7 +912,7 @@ a{text-decoration:none;}
 }
 
 /* CLOSING */
-.closing{background:linear-gradient(160deg,#FFF8CC 0%,#FFD200 50%,#F5A800 100%);padding:180px 60px 110px;text-align:center;position:relative;overflow:visible;margin-top:-2px;margin-bottom:0;}
+.closing{background:linear-gradient(160deg,#FFF8CC 0%,#FFD200 40%,#F5A800 75%,#FFF8D8 100%);padding:180px 60px 110px;text-align:center;position:relative;overflow:visible;margin-top:-2px;margin-bottom:0;}
 .closing::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.4) 0%,transparent 60%);pointer-events:none;z-index:0;}
 body{overflow-x:hidden;}
 .closing-wave-top{position:absolute;top:0;left:0;width:100%;height:160px;pointer-events:none;z-index:2;}
