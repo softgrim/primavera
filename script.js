@@ -10,15 +10,81 @@
   const nav = document.querySelector('.nav');
   if(!nav) return;
   const THRESHOLD = 80;
+  const MOBILE_BP = 1024;
+
   function checkNav(){
+    // On tablet/mobile: always visible, no scroll gate
+    if(window.innerWidth <= MOBILE_BP){
+      nav.classList.add('nav-visible');
+      return;
+    }
+    // Desktop: slide in after scrolling past threshold
     if(window.scrollY > THRESHOLD){
       nav.classList.add('nav-visible');
     } else {
       nav.classList.remove('nav-visible');
     }
   }
+
   window.addEventListener('scroll', checkNav, { passive:true });
+  window.addEventListener('resize', checkNav, { passive:true });
   checkNav();
+})();
+
+// ── HAMBURGER MENU ──
+(function(){
+  const btn     = document.getElementById('nav-hamburger');
+  const drawer  = document.getElementById('nav-drawer');
+  const overlay = document.getElementById('nav-overlay');
+  if(!btn || !drawer || !overlay) return;
+
+  function openMenu(){
+    btn.classList.add('open');
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    drawer.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu(){
+    btn.classList.remove('open');
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    drawer.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', () => {
+    btn.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  overlay.addEventListener('click', closeMenu);
+
+  // Close on any drawer link click
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeMenu();
+  });
+})();
+
+// ── STICKY BOTTOM BAR — slide up after scrolling past hero ──
+(function(){
+  const bar = document.getElementById('sticky-bottom-bar');
+  if(!bar) return;
+  const threshold = window.innerHeight * 0.75;
+  function check(){
+    if(window.scrollY > threshold){
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', check, { passive: true });
+  check();
 })();
 
 // ── FLOATING RIGHT CTA — slide in from right on scroll ──
