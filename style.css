@@ -861,6 +861,15 @@ a{text-decoration:none;}
 /* REVIEWS */
 .reviews{}
 .reviews .stitle{color:var(--tx);position:relative;z-index:1;}
+.reviews .stitle{margin-bottom:14px;}
+.reviews-disclaimer{
+  font-size:12.5px;
+  color:var(--tx-muted);
+  letter-spacing:.02em;
+  line-height:1.6;
+  margin-bottom:36px;
+  opacity:.75;
+}
 .reviews .bar{background:linear-gradient(90deg,var(--br),rgba(140,90,0,.2));}
 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 
